@@ -1,0 +1,277 @@
+Python Assignment Document
+Subject: Python Programming – Program Constructs and Functions
+Instructor: Vinod
+
+General Instructions
+1. Follow PEP 8 standards strictly.
+2. Every function must contain a proper docstring.
+3. Validate all user inputs.
+4. Raise appropriate exceptions (TypeError, ValueError) where necessary.
+5. Use modular design (functions for each logical unit).
+6. Use type(), id(), dir(), and help() wherever applicable.
+7. Avoid using advanced concepts not covered (no classes, no lists/dictionaries unless
+required in capstone).
+PART A – Progressive Skill Challenges
+These problems increase in complexity. Students must demonstrate proper program
+constructs, function design, validation, and introspection.
+
+1. Age Classification and Identity Inspection
+Create a function categorize_person(age) that:
+Raises:
+TypeError if age is not integer
+ValueError if age < 0 or age > 120
+Returns:
+Child (0–12)
+Teenager (13–19)
+Adult (20–59)
+Senior Citizen (60+)
+
+Additionally:
+Print id(age)
+Print type() of return value
+
+Vinod Kumar Kayartaya vinod@vinod.co
+
+2/8
+
+Test using user input.
+
+2. Multi-Level Stipend Bonus Policy (Mumbai Branch)
+Create calculate_stipend_bonus(stipend, rating).
+Validation:
+Stipend must be positive number.
+Rating must be integer between 1–5.
+Bonus Rules:
+Rating 5 → 30%
+Rating 4 → 20%
+Rating 3 → 10%
+Rating < 3 → 0%
+Also:
+Print id() of inputs.
+Include detailed docstring describing policy.
+
+3. Secure Password Validator
+Create validate_password(password).
+Rules:
+Minimum 8 characters
+At least 1 digit
+At least 1 uppercase letter
+Raise ValueError with specific message if rule fails.
+Return "Valid Password" if successful.
+
+4. Advanced Marks Evaluation System
+Create evaluate_marks(marks, attendance).
+Validation:
+Both between 0–100
+
+Vinod Kumar Kayartaya vinod@vinod.co
+
+3/8
+
+Rules:
+If attendance < 75 → Maximum grade is C
+Otherwise:
+>=90 → A
+>=75 → B
+>=50 → C
+<50 → Fail
+
+Raise exceptions for invalid inputs.
+
+5. Safe Integer Input Utility
+Create safe_integer_input(prompt).
+Internally uses input()
+Converts to integer
+Raises TypeError if conversion fails
+Returns valid integer
+Use this function in at least two other problems.
+
+6. Number Reversal with Validation
+Create reverse_number(n) using while.
+Raise ValueError if negative.
+Return reversed number.
+Print intermediate values inside loop.
+
+7. Digit Reduction System
+Create sum_of_digits(n).
+Accept positive integer.
+Use only while loop.
+Reduce repeatedly until single digit remains.
+Raise ValueError if negative.
+Example: 9875 → 2
+
+8. ATM Withdrawal Simulator (Exception Driven)
+
+Vinod Kumar Kayartaya vinod@vinod.co
+
+4/8
+Create withdraw(balance, amount).
+Rules:
+Both must be integers.
+Amount must be multiple of 100.
+Cannot exceed balance.
+Raise:
+TypeError
+ValueError
+Return updated balance.
+
+9. Admission Evaluation System (Mumbai Institute)
+Create check_admission(marks, age, city).
+Criteria:
+Marks ≥ 70
+Age ≥ 18
+City must be Mumbai, Pune, or Delhi
+Raise appropriate exceptions.
+Return:
+Admission Approved
+Admission Denied
+
+10. Interest Growth Analyzer (While Loop Intensive)
+Write a program:
+Accept principal and yearly rate.
+Calculate years required to double the amount.
+Print yearly amount inside loop.
+Raise ValueError if rate <= 0.
+
+11. Function Introspection Analyzer
+
+Vinod Kumar Kayartaya vinod@vinod.co
+
+5/8
+
+Create analyze_function(func).
+It must:
+Print type(func)
+Print first 10 results of dir(func)
+Display help(func)
+Test with:
+Your own function
+Built-in str.upper
+
+12. Custom Module Creation and Inspection
+Create module vinod_utils.py with:
+is_even(n)
+square(n)
+cube(n)
+format_city(city)
+In REPL:
+Import module.
+Use dir()
+Use help() on one function.
+Print type() of module.
+Print id() of module and each function.
+PART B – Comprehensive Capstone Mini Project
+
+Project Title: Mumbai Student Management and Utility Console
+System
+
+Objective
+Develop a structured, professional, menu-driven console application integrating all concepts
+learned.
+
+Functional Menu
+
+Vinod Kumar Kayartaya vinod@vinod.co
+
+6/8
+
+1. Register Student
+2. Age Categorization
+3. Stipend Bonus Calculation
+4. ATM Withdrawal
+5. Reverse Roll Number
+6. Digit Reduction Tool
+7. Admission Evaluation
+8. Module Inspector
+9. System Diagnostics
+10. Exit
+
+Detailed Requirements
+
+1. Register Student
+Accept name, age, marks, city.
+Validate all inputs.
+Raise exceptions for invalid data.
+Store in variables.
+Print memory id() of stored values.
+
+2. Age Categorization
+Call previously created categorize_person().
+
+3. Stipend Bonus Calculation
+Use calculate_stipend_bonus().
+
+4. ATM Withdrawal
+Use withdraw() with exception handling.
+
+5. Reverse Roll Number
+Use reverse_number().
+
+6. Digit Reduction Tool
+Use sum_of_digits().
+
+Vinod Kumar Kayartaya vinod@vinod.co
+
+7/8
+
+7. Admission Evaluation
+Use check_admission().
+
+8. Module Inspector
+Import vinod_utils.
+Display:
+dir(module)
+help(function)
+type(module)
+id() of module and functions.
+
+9. System Diagnostics
+Display:
+Total operations performed
+Types of all major variables
+IDs of stored student data
+Use:
+
+help("builtins")
+
+10. Exit
+Display summary:
+Student Name
+City
+Total operations performed
+Safely terminate program.
+
+Mandatory Technical Requirements
+Entire program must run inside continuous while loop.
+Use try-except blocks to prevent crash.
+No code repetition — use functions properly.
+Follow PEP 8.
+All functions must contain docstrings.
+
+Vinod Kumar Kayartaya vinod@vinod.co
+
+8/8
+
+Evaluation Criteria
+
+Criteria Weightage
+Logical correctness 25%
+Exception handling 20%
+Function usage 20%
+Introspection usage 15%
+Code readability & documentation 20%
+
+Expected Learning Outcomes
+By completing this combined assignment, students will demonstrate mastery in:
+Structured programming
+Input validation
+Exception handling
+Conditional logic
+While loops
+Function documentation
+Module creation
+Python introspection tools
+Building real-world console applications
+This assignment is designed to simulate structured development practice as followed in
+professional environments. Students are expected to submit clean, well-tested, and
+professionally formatted code.

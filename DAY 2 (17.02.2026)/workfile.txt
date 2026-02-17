@@ -1,0 +1,281 @@
+Project Structure Requirement (Mandatory)
+For this assignment, students must follow a proper project structure similar to what is followed
+in professional software development.
+Each exercise must be placed in a separate folder.
+Inside each folder:
+One module file containing the implemented functions.
+One test script file that imports the module and calls the functions.
+Optional: A 
+README.txt
+ explaining what the exercise does.
+This structure ensures:
+Proper modular programming
+Clear separation of logic and execution
+Practice in writing importable Python modules
+Industry-style organization
+Recommended Folder Naming Convention
+Use meaningful and consistent folder names:
+assignment_1_marks_processing 
+assignment_2_city_management 
+assignment_3_copy_investigation 
+assignment_4_sales_analyzer 
+Avoid vague names like:
+test1
+pythoncode
+newfolder 
+Sample Directory Tree Structure
+Below is a reference structure students should follow:
+1/9
+
+
+python_list_assignments/ 
+│ 
+├── assignment_1_marks_processing/ 
+│   ├── list_utils.py 
+│   ├── test_list_utils.py 
+│   └── README.txt 
+│ 
+├── assignment_2_city_management/ 
+│   ├── list_utils.py 
+│   ├── test_list_utils.py 
+│   └── README.txt 
+│ 
+├── assignment_3_copy_investigation/ 
+│   ├── list_utils.py 
+│   ├── test_list_utils.py 
+│   └── README.txt 
+│ 
+├── assignment_4_sales_analyzer/ 
+│   ├── list_utils.py 
+│   ├── test_list_utils.py 
+│   └── README.txt 
+│ 
+└── requirements.txt (optional, if needed later) 
+File Responsibilities
+1. 
+list_utils.py
+Example structure:
+Contains only function definitions.
+No direct input() or print() logic inside functions (unless explicitly required).
+Must be importable.
+def get_top_n_marks(marks, n):
+pass 
+def get_high_scorers(marks, threshold): 
+pass 
+2/9
+2. 
+test_list_utils.py
+
+
+Imports functions from 
+list_utils
+.
+Creates sample lists.
+Calls functions.
+Prints results clearly.
+Verifies that original lists are not modified when they should not be.
+Example structure:
+from list_utils import get_top_n_marks 
+marks = [78, 45, 90, 66] 
+result = get_top_n_marks(marks, 2) 
+print("Top Marks:", result) 
+print("Original Marks:", marks) 
+Submission Requirements
+Students must submit:
+. The complete 
+python_list_assignments
+ folder (zipped).
+. All subfolders properly structured.
+. Code that runs without modification.
+. Clear and readable output from test scripts.
+Learning Objectives Tested
+Designing reusable functions
+Working with lists as parameters
+Returning lists safely
+Avoiding unintended mutation
+Using slicing correctly
+Using list comprehension effectively
+Understanding shallow vs deep copy
+Writing modular, importable Python code
+Exercise 1: Marks Processing Module
+Scenario
+3/9
+
+
+Vinod has collected marks of students from the Mumbai batch. You need to create utility
+functions to process the marks list.
+Step 1: Create a Module 
+list_utils.py
+Implement the following functions:
+1.1 Function: Get Top N Marks
+def get_top_n_marks(marks: list, n: int) -> list: 
+""" 
+    Returns a new list containing the top n highest marks. 
+    The original marks list must not be modified. 
+    """ 
+Requirements:
+Validate that 
+marks
+ is a list.
+Validate that 
+n
+ is positive.
+Use sorting logic without modifying original list.
+Return top 
+n
+ values.
+1.2 Function: Count Occurrences
+def count_mark_occurrence(marks: list, value: int) -> int: 
+""" 
+    Returns how many times a given mark appears in the list. 
+    """ 
+Requirements:
+Validate input types.
+Use appropriate list method.
+1.3 Function: Filter High Scorers
+4/9
+
+
+def get_high_scorers(marks: list, threshold: int) -> list: 
+""" 
+    Returns a new list containing marks greater than or equal to 
+threshold.
+    Use list comprehension. 
+    """ 
+Step 2: Create Testing Script 
+test_list_utils.py
+Import functions from 
+list_utils
+.
+Create a marks list.
+Call all three functions.
+Print results clearly.
+Exercise 2: City List Management System
+Scenario
+Vinod maintains a list of cities where training sessions are conducted.
+Step 1: Create Functions in 
+list_utils.py
+2.1 Remove Duplicates
+Note: DO NOT USE 
+set
+def get_unique_cities(cities: list) -> list: 
+""" 
+    Returns a new list containing unique city names. 
+    Original list must remain unchanged. 
+    """ 
+Requirements:
+Maintain original order.
+Do not modify input list.
+5/9
+2.2 Alphabetical Sorting
+
+
+def get_sorted_cities(cities: list, descending: bool = False) -> 
+list: 
+""" 
+    Returns a sorted copy of the cities list. 
+    Must not modify the original list. 
+    """ 
+Requirements:
+Use 
+sorted()
+.
+Allow optional descending order.
+2.3 Convert to Uppercase
+def convert_cities_to_upper(cities: list) -> list: 
+""" 
+    Returns a new list where all city names are converted to 
+uppercase.
+    Use list comprehension. 
+    """ 
+Step 2: Testing Script
+Create a city list with duplicates.
+Call each function.
+Verify original list remains unchanged.
+Scenario
+Exercise 3: Copy Behavior Investigation
+You are given a nested list structure. You must implement functions that demonstrate shallow
+and deep copy behavior.
+Step 1: Implement in 
+list_utils.py
+6/9
+3.1 Shallow Copy Function
+
+
+def create_shallow_copy(data: list) -> list: 
+""" 
+    Returns a shallow copy of the given list. 
+    """ 
+3.2 Deep Copy Function
+def create_deep_copy(data: list) -> list: 
+""" 
+    Returns a deep copy of the given list. 
+    Use the copy module. 
+    """ 
+3.3 Append to Nested List
+def append_to_nested_list(data: list, value) -> None: 
+""" 
+    Appends a value to the first nested list found inside the list. 
+    Modify the list in place. 
+    """ 
+Step 2: Testing Script
+Create nested list like:
+student_data = ["Vinod", ["Mumbai", "Delhi"]] 
+Create shallow copy.
+Modify nested element.
+Observe behavior.
+Repeat with deep copy.
+Print IDs using 
+id()
+ to verify.
+Exercise 4: Sales Data Analyzer Module
+7/9
+Scenario
+
+
+Vinod wants to analyze monthly sales data.
+Step 1: Implement in 
+list_utils.py
+4.1 Filter Sales Above Threshold
+def filter_sales_above(sales: list, threshold: int) -> list: 
+""" 
+    Returns a list of sales values above threshold using list 
+comprehension. 
+    """ 
+4.2 Get First and Last Elements Using Slicing
+def get_sales_summary(sales: list, first_n: int, last_n: int) -> 
+tuple: 
+""" 
+    Returns a tuple containing: 
+    (first_n_sales_list, last_n_sales_list) 
+    Use slicing. 
+    """ 
+4.3 Reverse Without Modifying Original
+def get_reversed_sales(sales: list) -> list: 
+""" 
+    Returns a reversed copy of the sales list. 
+    Original list must remain unchanged. 
+    """ 
+Use slicing or 
+reversed()
+.
+4.4 Sort and Return Copy
+def get_sorted_sales(sales: list, descending: bool = False) -> list: 
+""" 
+    Returns a sorted copy of sales. 
+    Must not modify original list. 
+    """ 
+8/9
+
+Step 2: Testing Script
+Verify:
+Create sample sales list.
+Call all functions.
+Print:
+Original list
+Filtered list
+Reversed list
+Sorted list
+Original list remains unchanged.
+
+9/9

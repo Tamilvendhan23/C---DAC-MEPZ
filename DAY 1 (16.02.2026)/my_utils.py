@@ -1,4 +1,3 @@
-
 import my_utils
 def factorial(num):
 
@@ -12,7 +11,6 @@ def factorial(num):
         f*=num
         num-=1
     return f
-
 
 # Assignment question 1 
 def categorize_person(age):
@@ -85,7 +83,68 @@ def safe_integer_input(promt):
 
 
 # Assignment question 6
+def reverse_number(n):
+    if n < 0:
+        raise ValueError("Number should be positive!!")
+    
+    rev = str(n)[::-1]  
+    middle_value = rev[len(rev)//2]
+    
+    return [rev, middle_value]
 
 # Assignment question 7
+def sum_of_digits(n):
+    if n<0:
+        raise ValueError("value must be postive!!")
+    while n >= 10:  
+        total = 0
+        while n > 0:
+            total += n % 10
+            n //= 10
+        n = total
+    
+    return n
 
 # Assignment question 8
+def withdraw(balance,amount):
+    if  not type(balance)==int:
+        raise TypeError("balance should a number")
+    if not  type(amount)==int:
+        raise TypeError("amount should a number")
+    if not (balance>amount):
+        raise ValueError("check the balance and enter the amount")
+    if amount%100!=0:
+        raise ValueError("amount must be multiples of 100")
+    return balance-amount
+
+# Assignment question 9
+def check_addmission(marks,age,city):
+
+    if not type(marks)==int:
+        raise TypeError("Marks should be in number!!")
+    if not type(age)==int:
+        raise TypeError("age should be in the number!!")
+    c=['mumbai','pune','delhi']
+    
+    if city.lower() not in c:
+        raise ValueError("enter valid city!!")
+    if marks>=70 and age>=18:
+        return "Approved"
+    return "Denied"
+
+
+ # Assignment question 10
+def interest_growth(principal, rate):
+    if rate <= 0:
+        raise ValueError("Rate must be greater than 0!")
+
+    years = 0
+    amount = principal
+    target = principal * 2
+
+    while amount < target:
+        years += 1
+        amount += amount * (rate / 100)
+        print(f"Year {years}: {amount:.2f}")
+
+    return years
