@@ -1,0 +1,308 @@
+Day 3 Assignment
+Topics: Tuple, Set, Dictionary Instructor: Vinod
+
+General Instructions
+1. Follow modular design.
+2. Use proper function definitions (no full logic in global scope).
+3. Validate inputs.
+4. Raise appropriate exceptions where necessary.
+5. Use meaningful variable names.
+6. Follow PEP 8 guidelines.
+7. Organize each problem in a separate folder (similar to Day 2 structure).
+Part A – Tuple-Based Assignments (2)
+
+Tuple Assignment 1: Immutable Employee Record System
+Scenario
+You are maintaining employee records for Vinod’s Bangalore training center. Each employee
+record must be stored as a tuple in the format:
+
+(employee_id, name, city, salary)
+
+Requirements
+Write the following functions:
+
+def create_employee(emp_id: str, name: str, city: str, salary: float)
+-> tuple:
+"""
+Returns an employee record as a tuple.
+Validate inputs properly.
+"""
+
+
+
+2/9
+
+def update_salary(employee: tuple, new_salary: float) -> tuple:
+"""
+Since tuples are immutable, return a new tuple with updated
+salary.
+Original tuple must not be modified.
+"""
+
+def get_employee_details(employee: tuple) -> str:
+"""
+Returns formatted string containing employee details.
+"""
+
+Expectations
+Do not attempt to modify tuple directly.
+Demonstrate immutability concept.
+Return new tuples where required.
+Validate salary must be positive.
+
+Tuple Assignment 2: Tuple Data Analysis
+You are given a tuple of monthly revenues:
+
+revenues = (120000, 150000, 90000, 200000, 175000)
+
+Write the following functions:
+
+def get_highest_revenue(revenues: tuple) -> int:
+"""
+Returns the highest revenue.
+"""
+
+def get_lowest_revenue(revenues: tuple) -> int:
+"""
+Returns the lowest revenue.
+"""
+
+
+
+3/9
+
+def count_revenue_occurrence(revenues: tuple, value: int) -> int:
+"""
+Returns how many times a revenue value appears.
+"""
+
+Expectations
+Use tuple methods where applicable.
+Do not convert tuple to list unless absolutely necessary.
+Maintain immutability principle.
+Part B – Set-Based Assignments (2)
+
+Set Assignment 1: Student Enrollment System
+Vinod conducts training in multiple cities.
+Two batches:
+
+batch_bangalore = {"Amit", "Ravi", "Sneha", "Priya"}
+batch_pune = {"Ravi", "Karan", "Sneha", "Meena"}
+
+Write the following functions:
+
+def get_all_students(batch1: set, batch2: set) -> set:
+"""
+Returns union of both batches.
+"""
+
+def get_common_students(batch1: set, batch2: set) -> set:
+"""
+Returns intersection of both batches.
+"""
+
+def get_exclusive_students(batch1: set, batch2: set) -> set:
+"""
+Returns students who are only in batch1.
+"""
+
+
+
+4/9
+
+Expectations
+Use set operations (|, &, -).
+Do not manually loop.
+Validate inputs are sets.
+
+Set Assignment 2: Unique Skill Tracker
+You are given a list of skills reported by employees:
+
+skills = ["Python", "SQL", "Python", "Docker", "SQL", "AWS"]
+
+Write:
+
+def get_unique_skills(skill_list: list) -> set:
+"""
+Returns a set of unique skills.
+"""
+
+def add_skill(skill_set: set, skill: str) -> None:
+"""
+Adds a new skill to the set.
+"""
+
+def remove_skill(skill_set: set, skill: str) -> None:
+"""
+Removes a skill safely (should not crash if skill not found).
+"""
+
+Expectations
+Use set conversion.
+Use discard() where appropriate.
+Demonstrate uniqueness behavior.
+Part C – Dictionary-Based Assignments (2)
+
+Dict Assignment 1: Employee Directory
+
+
+
+5/9
+
+Create a dictionary structure:
+
+employees = {
+"EMP101": {"name": "Vinod", "city": "Bangalore", "salary":
+75000},
+"EMP102": {"name": "Amit", "city": "Delhi", "salary": 60000}
+}
+
+Write the following functions:
+
+def add_employee(directory: dict, emp_id: str, data: dict) -> None:
+"""
+Adds a new employee to directory.
+"""
+
+def get_employee(directory: dict, emp_id: str) -> dict:
+"""
+Returns employee details safely.
+"""
+
+def delete_employee(directory: dict, emp_id: str) -> None:
+"""
+Deletes employee if exists.
+"""
+
+Expectations
+Validate emp_id existence.
+Use dictionary methods properly.
+Do not crash on missing keys.
+
+Dict Assignment 2: Sales Summary Generator
+You are given:
+
+sales = {
+"Mumbai": 120000,
+"Delhi": 95000,
+"Chennai": 150000,
+"Pune": 80000
+}
+
+
+
+6/9
+
+Write:
+
+def get_top_city(sales: dict) -> str:
+"""
+Returns city with highest sales.
+"""
+
+def get_low_sales_cities(sales: dict, threshold: int) -> dict:
+"""
+Returns dictionary of cities with sales below threshold.
+"""
+
+def increase_sales(sales: dict, percentage: float) -> dict:
+"""
+Returns a new dictionary with increased sales values.
+Original dictionary must not be modified.
+"""
+
+Expectations
+Use dictionary comprehension.
+Preserve original dictionary where required.
+Part D – Enhancement Task: Complete Missing
+Features in app.py
+
+You were shown a modular structure with files like:
+app.py
+employee_service.py
+user_service.py
+my_utils.py
+Currently, some features such as:
+Edit Employee
+Delete Employee
+Possibly search/list functionality
+are incomplete or partially implemented.
+
+
+
+7/9
+Task: Implement Missing Features
+
+1. Edit Employee Feature
+Expected behavior:
+Ask user for employee ID.
+Check if employee exists in dictionary.
+Allow updating:
+Name
+City
+Salary
+Validate salary is positive.
+Update dictionary safely.
+Implementation Guidance:
+Use dict.get() to check existence.
+Modify nested dictionary.
+Do not recreate full dictionary unnecessarily.
+
+2. Delete Employee Feature
+Expected behavior:
+Ask for employee ID.
+If exists → remove from dictionary.
+If not → print appropriate message.
+Use pop() or del.
+
+3. List All Employees
+Expected behavior:
+Iterate through dictionary.
+Print structured format.
+Display:
+Employee ID
+Name
+City
+
+
+
+8/9
+
+Salary
+
+4. Data Validation
+Ensure:
+Employee ID cannot be empty.
+Salary must be numeric and positive.
+City must be non-empty string.
+
+5. Modular Design Expectations
+Business logic should be inside employee_service.py.
+app.py should only handle:
+Menu
+User input
+Calling service functions
+Avoid mixing input logic with data logic.
+Evaluation Criteria
+
+Criteria Weightage
+Correct use of tuple 15%
+Correct use of set 15%
+Correct use of dict 25%
+Implementation of missing features 25%
+Code structure & modularity 20%
+Learning Objectives
+By completing this assignment, you will:
+Understand immutability (tuple).
+Use mathematical set operations effectively.
+Work with nested dictionaries.
+Build structured service-based applications.
+Practice modular architecture similar to real-world projects in cities like Mumbai and
+Pune.
+
+
+
+You are expected to submit:
+1. Separate folders for each problem.
+2. Completed app.py with implemented features.
+3. Properly structured and tested code.
