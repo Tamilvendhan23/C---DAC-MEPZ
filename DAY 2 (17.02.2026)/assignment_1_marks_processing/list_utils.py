@@ -1,7 +1,7 @@
 # list_utils.py
 # 1.1 assignment 
 def validator(marks, n):
-    if not isinstance(marks, list):
+    if not isinstance(marks, list): # it can done also by check if not type(marks)==list:
         raise TypeError("marks must be a list")
 
     for i in marks:

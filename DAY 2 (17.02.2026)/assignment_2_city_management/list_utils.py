@@ -1,4 +1,4 @@
-def get_unique_cities(cities: list) -> list:
+def get_unique_cities(cities: list) -> list:   # this funciton is called without hint { def get_unique_cities(cities): }
     if not isinstance(cities, list):
         raise TypeError("cities must be a list")
 
