@@ -1,0 +1,204 @@
+Day 4 – Consolidated Assignment
+Topics Covered Modules · Packages · pip · Virtual Environment · Custom Packages · Functions
+& Argument Types · File Handling · Exceptions · Context Managers · PYTHONPATH
+Instructor: Vinod
+Assignment Title
+Employee Management Console Application (Modular & Packaged)
+Problem Statement
+Vinod runs a Python training and consulting firm in Bangalore. You are required to build a
+modular, package-based employee management system that:
+Uses proper Python packages and modules
+Runs inside a virtual environment
+Reads and writes employee data to text files
+Handles exceptions correctly
+Uses context managers for file operations
+Demonstrates different function argument types
+Can be executed as a standalone application
+Follows professional project structure
+Mandatory Project Structure
+You must follow this structure exactly:
+1/7
+
+
+employee_management_app/ 
+│ 
+├── venv/                      # Virtual environment (DO NOT COMMIT) 
+│ 
+├── app.py                     # Entry point 
+│ 
+├── services/ 
+│   ├── __init__.py 
+│   ├── employee_service.py 
+│ 
+├── utils/
+│   ├── __init__.py 
+│   ├── file_utils.py 
+│   ├── validation_utils.py 
+│ 
+├── data/ 
+│   └── employees.txt 
+│ 
+├── requirements.txt 
+│ 
+└── README.txt 
+Environment Setup (Mandatory)
+1. Create Virtual Environment
+python -m venv venv 
+Activate it before running the project.
+2. Use pip Inside Virtual Environment
+Install at least one external package (for example: 
+tabulate
+ or 
+colorama
+)
+Add it to 
+requirements.txt
+pip freeze > requirements.txt 
+Functional Requirements
+2/7
+
+
+1. Employee Data Model
+Employee data should be represented using a dictionary:
+{ 
+} 
+"id": "EMP101", 
+"name": "Vinod", 
+"city": "Bangalore", 
+"salary": 75000 
+All employees are stored in a list of dictionaries in memory.
+2. 
+employee_service.py
+ (Core Business Logic)
+Implement the following functions:
+def add_employee(emp_list: list, emp_id: str, name: str, city: str, 
+salary: float) -> None: 
+""" 
+    Adds a new employee to the list. 
+    """ 
+def edit_employee(emp_list: list, emp_id: str, **updates) -> None: 
+""" 
+    Updates employee details using keyword arguments. 
+    Example updates: name, city, salary 
+    """ 
+def delete_employee(emp_list: list, emp_id: str) -> None: 
+""" 
+    Deletes an employee by ID. 
+    """ 
+def list_employees(emp_list: list) -> list: 
+""" 
+    Returns the list of all employees. 
+    """ 
+3/7
+Expectations
+
+
+Use 
+**kwargs
+ for flexible updates
+Raise 
+ValueError
+ if employee ID does not exist
+Salary must always be positive
+No file handling logic in this module
+3. 
+file_utils.py
+ (File Handling + Context Managers)
+Implement:
+def load_employees(file_path: str) -> list: 
+""" 
+    Reads employee data from a text file and returns a list. 
+    Must use context manager. 
+    """ 
+def save_employees(file_path: str, emp_list: list) -> None: 
+""" 
+    Writes employee data to file safely. 
+    Must use context manager. 
+    """ 
+File Format (employees.txt)
+EMP101,Vinod,Bangalore,75000 
+EMP102,Amit,Delhi,60000 
+Implement reusable validation functions:
+4. 
+validation_utils.py
+ (Exception Handling)
+def validate_employee_id(emp_id: str) -> None: 
+""" 
+    Raises ValueError if ID is invalid. 
+    """ 
+def validate_salary(salary: float) -> None: 
+""" 
+    Raises ValueError if salary is not positive. 
+    """ 
+4/7
+Vinod Kumar Kayartaya
+def validate_non_empty(value: str, field_name: str) -> None:
+""" 
+    Raises ValueError if string is empty. 
+    """ 
+5. 
+app.py
+ (Application Entry Point)
+This file must:
+Act as the only executable file
+Contain a menu-driven program
+Import all required services and utilities
+Use 
+if __name__ == "__main__"
+Menu Options
+1. Add Employee 
+2. Edit Employee 
+3. Delete Employee 
+4. List Employees 
+5. Save to File 
+6. Exit 
+vinod@vinod.co
+Mandatory Expectations in 
+app.py
+Use positional + keyword arguments when calling functions
+Wrap menu execution in 
+try-except
+Handle:
+ValueError
+FileNotFoundError
+Generic Exception (last)
+On exit, ask user whether to save data
+6. PYTHONPATH Requirement
+5/7
+You must ensure that:
+
+
+Packages (
+services
+, 
+utils
+) are importable
+Imports work without modifying code paths
+Validation method:
+import sys
+print(sys.path)
+You should explain (in README):
+How Python finds their packages
+Whether PYTHONPATH was required or not
+7. README.txt (Mandatory Explanation)
+You must explain:
+. How to activate the virtual environment
+. How to run 
+app.py
+. What each package does
+. How file handling is implemented
+. How exception handling is structured
+. How context managers are used
+. Where function argument types are demonstrated
+Constraints
+No global variables for employee data
+No direct file access inside service layer
+No hardcoded file paths
+No modification of PYTHONPATH in production-style code
+Evaluation Criteria
+Area
+Weightage
+Project structure & packaging
+Virtual environment & pip usage
+File handling & context managers 
+Exception handling

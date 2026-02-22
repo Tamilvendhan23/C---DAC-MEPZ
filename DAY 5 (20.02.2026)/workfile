@@ -1,0 +1,165 @@
+Day 5 – Consolidated OOP Assignment
+Topics Covered: Classes & Objects · Member Variables & Methods · __init__ · Private
+Members · Static Members · Operator Overloading · Inheritance · Custom Exception Classes
+Instructor: Vinod
+
+Assignment Title
+Employee Payroll & Management System (OOP-Based Design)
+
+Problem Statement
+
+We are building an internal Employee Payroll and Management System for his Bangalore-
+based training and consulting firm.
+
+You are required to design and implement this system using Object-Oriented Programming
+principles in Python.
+The solution must be modular, clean, and must demonstrate correct use of OOP features
+covered in Day 5.
+
+Core Requirements
+
+1. Base Class – Person
+
+Create a class Person that represents a generic person.
+Attributes
+name (public)
+city (public)
+Methods
+
+def __init__(self, name: str, city: str):
+pass
+
+Vinod Kumar Kayartaya vinod@vinod.co
+
+2/6
+def get_details(self) -> str:
+"""
+Returns formatted string containing person details.
+"""
+
+2. Custom Exception Class
+Create a custom exception class:
+
+class InvalidSalaryError(Exception):
+pass
+
+This exception must be raised whenever an invalid salary is provided.
+
+3. Derived Class – Employee
+Create a class Employee that inherits from Person.
+
+Attributes
+Attribute Type Visibility
+emp_id str public
+__salary float private
+company_name str static
+Set:
+
+company_name = "Vinod Technologies"
+
+Constructor
+
+def __init__(self, emp_id: str, name: str, city: str, salary: float):
+pass
+
+Constructor Requirements
+
+Vinod Kumar Kayartaya vinod@vinod.co
+
+3/6
+Call the parent class constructor using super()
+Validate salary
+Raise InvalidSalaryError if salary <= 0
+Initialize all member variables
+
+4. Member Methods
+Implement the following methods:
+
+def get_salary(self) -> float:
+"""
+Returns the private salary value.
+"""
+
+def update_salary(self, new_salary: float) -> None:
+"""
+Updates salary after validation.
+"""
+
+def get_details(self) -> str:
+"""
+Overrides Person.get_details()
+Includes employee ID and salary.
+"""
+
+5. Static Methods
+Implement a static method:
+
+@staticmethod
+def is_valid_salary(salary: float) -> bool:
+"""
+Returns True if salary is positive.
+"""
+
+Use this method inside the constructor and salary update logic.
+
+6. Operator Overloading
+
+Vinod Kumar Kayartaya vinod@vinod.co
+
+4/6
+
+Overload the + operator so that:
+
+emp1 + emp2
+
+returns the total salary of both employees.
+Requirement
+
+def __add__(self, other):
+pass
+
+Validate that:
+other is an instance of Employee
+Raise TypeError otherwise
+
+7. Demonstration Script
+Write a separate script (main.py) that:
+1. Creates multiple Employee objects
+2. Prints employee details
+3. Updates salary
+4. Demonstrates operator overloading
+5. Demonstrates inheritance behavior
+6. Handles custom exceptions using try-except
+7. Accesses static members correctly
+
+Example Usage Flow (Conceptual)
+
+Create Employee
+Print Details
+Update Salary
+Add Two Employees (Salary)
+Trigger Invalid Salary Error
+Display Company Name
+
+Technical Constraints
+
+Vinod Kumar Kayartaya vinod@vinod.co
+
+5/6
+
+Do NOT access private members directly outside the class
+Do NOT use global variables
+Use super() for inheritance
+Use meaningful method and variable names
+Follow PEP 8 naming conventions
+
+Optional Enhancement (Bonus)
+Overload __str__() to return readable employee details
+Overload __eq__() to compare employees by emp_id
+Add a class method to change company name
+
+Expected Output Characteristics
+Clear and readable console output
+Proper error messages from custom exceptions
+No uncaught exceptions
+Logical and consistent behavior
