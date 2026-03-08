@@ -1,6 +1,6 @@
 # C DAC MEPZ – Internship Learning Repository
 
-Welcome to my internship repository for Python for Data Science at DAC-MEPZ!
+Welcome to my internship repository for Python for Data Science and machine Learning at DAC-MEPZ!
 
 This repository tracks my hands-on learning journey and progress as I complete assignments, write utilities, and take learning notes. **Work is in progress** and new content will be added as I move forward in my internship.
 
